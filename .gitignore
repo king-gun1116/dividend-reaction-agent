@@ -1,2 +1,24 @@
+# Python
 __pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+
+# Environments
+.env
+.venv/
+env/
+venv/
+*.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
 .DS_Store
+
+# VSCode
+.vscode/
+
+# FAISS / embedding
+data/dividend_faiss_index/

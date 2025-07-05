@@ -1,53 +1,30 @@
-## 📈 배당 공시 기반 주가 반응 예측 Agent
+# 💰 Dividend Reaction Agent
 
-이 프로젝트는 배당 공시를 입력받아 요약하고, 과거 유사 사례를 탐색하며, 공시 이후의 주가 반응(상승/하락/유지)을 예측하는 자동화 Agent를 구축하는 것입니다.
+미래에셋 AI 페스티벌 TECH 부문 참가 프로젝트  
+**배당 공시 → 주가 반응**을 자동으로 예측하는 Agent 시스템입니다.
 
-## 🚀 실행 방법
+---
 
-다음 명령어로 전체 전처리 및 학습 파이프라인을 실행할 수 있습니다:
+## 📌 주요 기능
+
+1. **DART API 기반 배당 공시 수집** (병렬 처리 + 증분 업데이트)
+2. **본문 HTML 파싱 및 배당 데이터 전처리**
+3. **ML 학습용 CSV + FAISS 임베딩 색인 자동 생성**
+4. **HyperCLOVA Agent 검색 대응을 위한 인덱스 구축**
+
+---
+
+## 📂 프로젝트 구조
 
 ```bash
-python run_pipeline.py
-
-🗂 폴더 구조
-dividend_reaction_agent/
-├── data/                  # 원본 및 처리된 데이터
-├── notebooks/             # 실험용 Jupyter 파일
-├── models/                # 학습된 모델
-├── utils/                 # 기능 함수 모듈
-├── run_pipeline.py        # 전체 실행 스크립트
-├── requirements.txt       # 필수 패키지
-└── README.md              # 프로젝트 설명서
-
-🧠 주요 기술 스택
- • 📄 DART API로 배당 공시 수집
- • 📊 yfinance로 주가 데이터 수집
- • 🤖 LSTM 기반 주가 반응 예측
- • 🧠 HyperCLOVA 기반 요약 및 정책 분류 (외부)
- • 🧾 Flask 기반 Agent API 서버
-
-
-🔗 평가용 API 형식
-
-http
-GET /agent?question=거래량이 전날 대비 15% 이상 오른 종목을 모두 보여줘
-
-json
-{
-  "answer": "아난티, 엠에프엠코리아입니다."
-}
-
-
-## ✅ 2. `requirements.txt` (패키지 목록)
-
-```txt
-pandas
-numpy
-yfinance
-requests
-scikit-learn
-tensorflow
-flask
-beautifulsoup4
-lxml
-tqdm
+├── run_pipeline.py              # 전체 파이프라인 실행 스크립트
+├── data/                        # 데이터 저장 디렉토리
+│   ├── dividend_with_text.csv
+│   ├── dividend_ml_ready.csv
+│   └── ...
+├── utils/                       # 기능별 모듈화 코드
+│   ├── dart_api.py              # 배당 공시 수집 + 전처리
+│   └── embed_utils.py          # 임베딩 및 FAISS 색인
+├── notebooks/                   # 실험용 노트북
+├── results/                     # 결과물 저장 폴더
+└── requirements.txt             # 의존성 패키지
