@@ -24,3 +24,5 @@ venv/
 data/dividend_faiss_index/
 data/dividend_with_text.csv
 data/dividend_with_text.jsonl
+data/dividend_with_text.csv
+data/dividend_with_text.jsonl
