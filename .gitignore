@@ -26,3 +26,5 @@ data/dividend_with_text.csv
 data/dividend_with_text.jsonl
 data/dividend_with_text.csv
 data/dividend_with_text.jsonl
+.env
+data/price_cache/
