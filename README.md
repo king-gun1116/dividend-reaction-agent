@@ -28,3 +28,54 @@
 ├── notebooks/                   # 실험용 노트북
 ├── results/                     # 결과물 저장 폴더
 └── requirements.txt             # 의존성 패키지
+
+
+⚙️ 실행 방법
+# 환경변수 설정 (DART_API_KEY)
+echo "DART_API_KEY=your_key_here" > .env
+
+# 패키지 설치
+pip install -r requirements.txt
+
+# 전체 파이프라인 실행
+python run_pipeline.py
+
+🤝 팀원
+	•	김건 (데이터 수집 / 모델링 / 파이프라인 설계)
+
+## ✅ `requirements.txt`
+```txt
+pandas
+requests
+tqdm
+xmltodict
+beautifulsoup4
+python-dotenv
+chardet
+faiss-cpu
+openai
+webdriver-manager
+selenium
+
+📌 생성 명령어 요약
+echo '__pycache__/
+*.py[cod]
+.env
+data/dividend_faiss_index/' > .gitignore
+
+echo '# 💰 Dividend Reaction Agent
+
+배당 공시 → 주가 반응을 예측하는 AI Agent 시스템입니다.
+(상세 설명 생략)' > README.md
+
+echo 'pandas
+requests
+tqdm
+xmltodict
+beautifulsoup4
+python-dotenv
+chardet
+faiss-cpu
+openai
+webdriver-manager
+selenium' > requirements.txt
