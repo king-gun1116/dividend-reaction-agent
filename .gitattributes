@@ -3,5 +3,6 @@ data/price_history.csv filter=lfs diff=lfs merge=lfs -text
 data/html/dividend_with_text.csv filter=lfs diff=lfs merge=lfs -text
 data/html/dividend_with_text.jsonl filter=lfs diff=lfs merge=lfs -text
 data/module_datasets/*.csv filter=lfs diff=lfs merge=lfs -text
+data/**/*.{csv,jsonl}
 data/**/*.csv filter=lfs diff=lfs merge=lfs -text
 data/**/*.jsonl filter=lfs diff=lfs merge=lfs -text
