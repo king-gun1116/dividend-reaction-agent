@@ -12,6 +12,7 @@ End-to-End 배당 공시 Agent 파이프라인
 from __future__ import annotations
 import os
 import pandas as pd
+import papermill as pm
 from dotenv import load_dotenv
 
 # 내부 모듈
@@ -83,6 +84,22 @@ def run_pipeline(
     print(f"✅ FAISS 인덱스 저장 → {faiss_dir}")
 
     print("\n🎉 전체 파이프라인 완료")
+
+    NOTEBOOKS = [
+    "03_feature_engineering_refactored.ipynb",
+    "04_classification.ipynb",
+    "05_regression.ipynb",
+    "06_clustering.ipynb",
+    ]
+
+    for nb in NOTEBOOKS:
+        print(f"\n▶ 실행 중: {nb}")
+        pm.execute_notebook(
+            input_path  = os.path.join("notebooks", nb),
+            output_path = os.path.join("artifacts", nb.replace(".ipynb", ".out.ipynb")),
+            parameters  = dict(data_dir=BASE)
+    )
+    print("\n✅ 모든 노트북 실행 완료")
 
 
 if __name__ == "__main__":
