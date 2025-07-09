@@ -1,4 +1,17 @@
-# Python
+# 무거운 파일 & 캐시 제외
+data/*.csv
+data/*.jsonl
+data/module_datasets/
+data/results/
+data/price_cache/
+data/dividend_faiss_index/
+artifacts/
+
+# 기타
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+.env# Python
 __pycache__/
 *.py[cod]
 *.egg-info/
